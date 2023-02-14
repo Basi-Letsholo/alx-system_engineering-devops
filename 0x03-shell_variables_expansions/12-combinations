@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e "\n"{a..z}{a..z} | tail -n 676 | grep -v "oo"
