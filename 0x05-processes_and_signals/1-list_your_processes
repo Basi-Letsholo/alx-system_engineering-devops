@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# prints list of current running processes
+# prints list of current running process
 
-echo "$(ps -aueH)"
+ps -aueH
