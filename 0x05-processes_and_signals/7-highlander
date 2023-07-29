@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# prints "to infinity..." infite times, with sigterm
+
+function print_sig()
+{
+	echo "I am invincible!!!"
+	exit 0
+}
+
+trap 'print_sig' SIGTERM
+
+i=1
+while [ $i -eq 1 ]
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
