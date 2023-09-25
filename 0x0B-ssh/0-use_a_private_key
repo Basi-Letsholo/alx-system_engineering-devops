@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # uses ssh to connect to my seerver using private key with user 'ubuntu'
 
-ssh -i "~/.ssh/school" ubuntu@54.160.90.222
+ssh -i ~/.ssh/school ubuntu@54.160.90.222
