@@ -1,9 +1,12 @@
 # sets up client ssh config file
 
-file { '~/.ssh/school'
+file { 'ubuntu/~/etc/ssh/ssh_config':
   ensure  => 'present',
   mode    => '0600',
-  content => 'Host 54.160.90.222',
-  content => '	IdentityFile ~/.ssh/school',
-  content => '	PasswordAuthentication no',
+  owner   => 'ubuntu',
+  content => "
+    Host 54.160.90.222
+      IdentityFile ~/.ssh/school
+      PasswordAuthentication no
+  ",
 }
