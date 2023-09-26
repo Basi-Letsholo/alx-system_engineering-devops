@@ -3,17 +3,21 @@
 
 arg_count=${#@}
 
-if [ $arg_count -lt 3 ]; then
+if [ "$arg_count" -lt 3 ]; then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
-else
-	file_to_transfer=$1
-	IP=$2
-	username=$3
-	ssh_key=$4
-
-	# open server w/ IP and ssh key & username
-	ssh -i $ssh_key $username@$IP 'cp '"$file_to_transfer"' ~/'
-
-	# cp file to server
-	#cp $file_to_transfer ~/
+	exit 1
 fi
+
+file_to_transfer="$1"
+IP="$2"
+username="$3"
+ssh_key="$4"
+
+scp -o StrictHostKeyChecking=no -i "$ssh_key" "$file_to_transfer" "$username@$IP":~/
+
+# open server w/ IP and ssh key & username
+#ssh -i $ssh_key $username@$IP 'cp '"$file_to_transfer"' ~/'
+
+# cp file to server
+#cp $file_to_transfer ~/
+
