@@ -14,10 +14,3 @@ username="$3"
 ssh_key="$4"
 
 scp -o StrictHostKeyChecking=no -i "$ssh_key" "$file_to_transfer" "$username@$IP":~/
-
-# open server w/ IP and ssh key & username
-#ssh -i $ssh_key $username@$IP 'cp '"$file_to_transfer"' ~/'
-
-# cp file to server
-#cp $file_to_transfer ~/
-
