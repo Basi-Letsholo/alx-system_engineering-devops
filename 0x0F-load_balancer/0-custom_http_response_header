@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
-# configure new ubuntu machine
+# configure new ubuntu machine with custom header
 
+sudo apt-get update
+sudo apt-get install -y nginx
 
+echo "add_header X-Served-By $hostname;" | sudo tee /etc/nginx/conf.d/custom_header.conf
+
+sudo systemctl reload nginx
