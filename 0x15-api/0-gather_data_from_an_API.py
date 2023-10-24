@@ -13,21 +13,23 @@ if __name__ == "__main__":
 
     emp_id = sys.argv[1]
 
-    user_url = f"https://jsonplaceholder.typicode.com/users/{emp_id}"
-    user_response = requests.get(user_url).json()
-    name = user_response.get("name")
+    base_url = f'https://jsonplaceholder.typicode.com/'
 
-    todo_url = f"https://jsonplaceholder.typicode.com/todos/{emp_id}"
-    todo_data = requests.get(todo_url).json()
+    users = f'users?id={emp_id}'
+    todos = f'todos?userId={emp_id}'
+    done = f'{todos}&completed=true'
+    not_done = f'{todos}&completed=false'
 
-    done_url = f"https://jsonplaceholder.typicode.com/todos?userID={emp_id}&completed=true"
-    done_data = requests.get(done_url).json()
+    user_data = requests.get(f'{base_url}{users}').json()
+    name = user_data[0].get("name")
+
+    todo_data = requests.get(f'{base_url}{todos}').json()
+    done_data = requests.get(f'{base_url}{done}').json()
+
+    len_todo = len(todo_data)
     len_done = len(done_data)
 
-    not_done_url = f"https://jsonplaceholder.typicode.com/todos?userID={emp_id}&completed=false"
-    not_data = requests.get(not_done_url).json()
-    len_not = len(not_data)
+    print(f'Employee {name} is done with tasks({len_done}/{len_todo}):')
 
-    print(f"Employee {name} is done with tasks({len_done}/{len_not}):")
     for task in done_data:
-        print("\t "+task.get('title'))
+        print("\t "+task.get("title"))
