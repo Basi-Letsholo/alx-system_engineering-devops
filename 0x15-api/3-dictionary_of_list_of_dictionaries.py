@@ -30,15 +30,13 @@ if __name__ == "__main__":
     len_todo = len(todo_data)
     len_done = len(done_data)
 
-    with open(f'{emp_id}.json', 'w') as json_file:
-        data = {
-                emp_id: [
-                    {
-                        "task": task.get("title"),
-                        "completed": task.get("completed"),
-                        "username": name,
-                    }
-                    for task in todo_data
-                    ]
+    with open(f'todo_all_employees.json', 'w') as dict_file:
+        data = [
+                {
+                    "username": name,
+                    "task": task.get("title"),
+                    "completed": task.get("completed")
                 }
-        json.dump(data, json_file)
+                for task in todo_data
+                ]
+        json.dump(data, dict_file)
