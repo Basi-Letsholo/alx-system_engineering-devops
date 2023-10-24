@@ -31,6 +31,6 @@ if __name__ == "__main__":
 
     with open(f'{emp_id}.csv', 'w') as csv_file:
         for todo in todo_data:
-            data = f'"{emp_id}", "{name}", "{todo.get("completed")}", '
+            data = f'"{emp_id}","{name}","{todo.get("completed")}",'
             title = f'"{todo.get("title")}"\n'
             csv_file.write(data + title)
