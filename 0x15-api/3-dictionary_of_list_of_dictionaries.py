@@ -23,6 +23,7 @@ if __name__ == "__main__":
 
     user_data = requests.get(f'{base_url}{users}').json()
     name = user_data[0].get("name")
+    username = user_data[0].get("username")
 
     todo_data = requests.get(f'{base_url}{todos}').json()
     done_data = requests.get(f'{base_url}{done}').json()
@@ -33,7 +34,7 @@ if __name__ == "__main__":
     with open(f'todo_all_employees.json', 'w') as dict_file:
         data = [
                 {
-                    "username": name,
+                    "username": username,
                     "task": task.get("title"),
                     "completed": task.get("completed")
                 }
