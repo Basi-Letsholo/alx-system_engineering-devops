@@ -22,6 +22,7 @@ if __name__ == "__main__":
 
     user_data = requests.get(f'{base_url}{users}').json()
     name = user_data[0].get("name")
+    username = user_data[0].get("username")
 
     todo_data = requests.get(f'{base_url}{todos}').json()
     done_data = requests.get(f'{base_url}{done}').json()
@@ -31,6 +32,6 @@ if __name__ == "__main__":
 
     with open(f'{emp_id}.csv', 'w') as csv_file:
         for todo in todo_data:
-            data = f'"{emp_id}","{name}","{todo.get("completed")}",'
+            data = f'"{emp_id}","{username}","{todo.get("completed")}",'
             title = f'"{todo.get("title")}"\n'
             csv_file.write(data + title)
