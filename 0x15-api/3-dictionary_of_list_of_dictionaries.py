@@ -8,10 +8,6 @@ import sys
 
 if __name__ == "__main__":
 
-    if len(sys.argv) != 2:
-        print("Usage: ./2-export_to_JSON.py <EMPLOYEE ID>")
-        sys.exit(1)
-
     emp_id = sys.argv[1]
 
     base_url = f'https://jsonplaceholder.typicode.com/'
