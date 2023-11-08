@@ -8,8 +8,8 @@ import requests
 
 if __name__ == '__main__':
 
-    api_key = '69af620f28a256c866ba329eaf95fed7'
-    app_key = 'dd5a5aef0c3e73fb1c6232f973b2f443f76a8b22'
+    api_key = ''
+    app_key = ''
 
     options = {
             'api_key': api_key,
