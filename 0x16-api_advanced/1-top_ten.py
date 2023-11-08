@@ -5,7 +5,7 @@ import requests
 
 
 def top_ten(subreddit):
-    limit = 9
+    limit = 10
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit={limit}'
     headers = {'User-Agent': 'MyRedditApi/Sunflower'}
 
@@ -25,10 +25,10 @@ def top_ten(subreddit):
 
         if len_list == 0:
             print(None)
-            return None
+            return
 
         for i in range(0, 10):
             print(top_posts[i])
 
     else:
-        return None
+        print(None)
