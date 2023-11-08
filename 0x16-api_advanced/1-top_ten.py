@@ -27,7 +27,7 @@ def top_ten(subreddit):
             print(None)
             return
 
-        for i in range(0, 10):
+        for i in range(9, -1, -1):
             print(top_posts[i])
 
     else:
