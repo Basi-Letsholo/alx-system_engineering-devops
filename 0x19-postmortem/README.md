@@ -1,3 +1,3 @@
 # Postmortem
 
-[Postmortem Doc (Click here)](https://www.canva.com/design/DAF0Kpd5rXA/B2CR16ry54D_AeSB8Kd0vA/edit?utm_content=DAF0Kpd5rXA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+[Postmortem Doc (Click here)](https://docs.google.com/document/d/1IAbiRjBE_IMnIygWH5aiimBvTDYo13xI6Q7lWLgRIF8/edit?usp=sharing)
